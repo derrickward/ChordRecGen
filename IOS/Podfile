@@ -1,0 +1,5 @@
+workspace 'ChordRecognizeGenerate'
+target 'ChordSampleApp' do
+	project 'ChordSampleApp/ChordSampleApp.xcodeproj'
+	pod 'AudioKit', '~> 4.0'
+end

@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D79DD06923BAA95100A18FEF /* MIDIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79DD06823BAA95100A18FEF /* MIDIConstants.swift */; };
+		D79DD06D23BEF41C00A18FEF /* Triad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79DD06C23BEF41C00A18FEF /* Triad.swift */; };
+		D79DD07123CA826C00A18FEF /* ChordGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79DD07023CA826C00A18FEF /* ChordGroup.swift */; };
+		D7A212E3240CBB8E0015BD4F /* Tone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A212E2240CBB8E0015BD4F /* Tone.swift */; };
+		D7A212E5240EF2A90015BD4F /* Designator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A212E4240EF2A90015BD4F /* Designator.swift */; };
+		D7B84BA223AD53B800A7FEA1 /* ChordRecognizeGenerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B84B9823AD53B800A7FEA1 /* ChordRecognizeGenerate.framework */; };
+		D7B84BA723AD53B800A7FEA1 /* ChordRecognizeGenerateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B84BA623AD53B800A7FEA1 /* ChordRecognizeGenerateTests.swift */; };
+		D7B84BA923AD53B800A7FEA1 /* ChordRecognizeGenerate.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B84B9B23AD53B800A7FEA1 /* ChordRecognizeGenerate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7B84BB323AD53E100A7FEA1 /* ChordRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B84BB223AD53E100A7FEA1 /* ChordRecognizer.swift */; };
+		D7B84BB523AD547000A7FEA1 /* ChordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B84BB423AD547000A7FEA1 /* ChordGenerator.swift */; };
+		D7B84BB723AD55F600A7FEA1 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B84BB623AD55F600A7FEA1 /* Chord.swift */; };
+		D7B84BF523AE937300A7FEA1 /* ChordDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B84BF423AE937300A7FEA1 /* ChordDefs.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7B84BA323AD53B800A7FEA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7B84B8F23AD53B800A7FEA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7B84B9723AD53B800A7FEA1;
+			remoteInfo = ChordRecognizeGenerate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D79DD06823BAA95100A18FEF /* MIDIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIConstants.swift; sourceTree = "<group>"; };
+		D79DD06C23BEF41C00A18FEF /* Triad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triad.swift; sourceTree = "<group>"; };
+		D79DD07023CA826C00A18FEF /* ChordGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordGroup.swift; sourceTree = "<group>"; };
+		D79DD07323CEA10400A18FEF /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = ../Pods/AudioKit/iOS/AudioKitUI.framework; sourceTree = "<group>"; };
+		D7A212E2240CBB8E0015BD4F /* Tone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tone.swift; sourceTree = "<group>"; };
+		D7A212E4240EF2A90015BD4F /* Designator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designator.swift; sourceTree = "<group>"; };
+		D7B84B9823AD53B800A7FEA1 /* ChordRecognizeGenerate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChordRecognizeGenerate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B84B9B23AD53B800A7FEA1 /* ChordRecognizeGenerate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChordRecognizeGenerate.h; sourceTree = "<group>"; };
+		D7B84B9C23AD53B800A7FEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7B84BA123AD53B800A7FEA1 /* ChordRecognizeGenerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordRecognizeGenerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7B84BA623AD53B800A7FEA1 /* ChordRecognizeGenerateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordRecognizeGenerateTests.swift; sourceTree = "<group>"; };
+		D7B84BA823AD53B800A7FEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7B84BB223AD53E100A7FEA1 /* ChordRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordRecognizer.swift; sourceTree = "<group>"; };
+		D7B84BB423AD547000A7FEA1 /* ChordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordGenerator.swift; sourceTree = "<group>"; };
+		D7B84BB623AD55F600A7FEA1 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
+		D7B84BF423AE937300A7FEA1 /* ChordDefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordDefs.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7B84B9523AD53B800A7FEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B84B9E23AD53B800A7FEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B84BA223AD53B800A7FEA1 /* ChordRecognizeGenerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D79DD07223CEA10400A18FEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D79DD07323CEA10400A18FEF /* AudioKitUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7B84B8E23AD53B800A7FEA1 = {
+			isa = PBXGroup;
+			children = (
+				D7B84B9A23AD53B800A7FEA1 /* ChordRecognizeGenerate */,
+				D7B84BA523AD53B800A7FEA1 /* ChordRecognizeGenerateTests */,
+				D7B84B9923AD53B800A7FEA1 /* Products */,
+				D79DD07223CEA10400A18FEF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D7B84B9923AD53B800A7FEA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7B84B9823AD53B800A7FEA1 /* ChordRecognizeGenerate.framework */,
+				D7B84BA123AD53B800A7FEA1 /* ChordRecognizeGenerateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7B84B9A23AD53B800A7FEA1 /* ChordRecognizeGenerate */ = {
+			isa = PBXGroup;
+			children = (
+				D79DD06823BAA95100A18FEF /* MIDIConstants.swift */,
+				D7B84B9B23AD53B800A7FEA1 /* ChordRecognizeGenerate.h */,
+				D7B84BB223AD53E100A7FEA1 /* ChordRecognizer.swift */,
+				D7B84BB423AD547000A7FEA1 /* ChordGenerator.swift */,
+				D7B84B9C23AD53B800A7FEA1 /* Info.plist */,
+				D7B84BB623AD55F600A7FEA1 /* Chord.swift */,
+				D7B84BF423AE937300A7FEA1 /* ChordDefs.swift */,
+				D79DD06C23BEF41C00A18FEF /* Triad.swift */,
+				D79DD07023CA826C00A18FEF /* ChordGroup.swift */,
+				D7A212E2240CBB8E0015BD4F /* Tone.swift */,
+				D7A212E4240EF2A90015BD4F /* Designator.swift */,
+			);
+			path = ChordRecognizeGenerate;
+			sourceTree = "<group>";
+		};
+		D7B84BA523AD53B800A7FEA1 /* ChordRecognizeGenerateTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7B84BA623AD53B800A7FEA1 /* ChordRecognizeGenerateTests.swift */,
+				D7B84BA823AD53B800A7FEA1 /* Info.plist */,
+			);
+			path = ChordRecognizeGenerateTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D7B84B9323AD53B800A7FEA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B84BA923AD53B800A7FEA1 /* ChordRecognizeGenerate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D7B84B9723AD53B800A7FEA1 /* ChordRecognizeGenerate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7B84BAC23AD53B800A7FEA1 /* Build configuration list for PBXNativeTarget "ChordRecognizeGenerate" */;
+			buildPhases = (
+				D7B84B9323AD53B800A7FEA1 /* Headers */,
+				D7B84B9423AD53B800A7FEA1 /* Sources */,
+				D7B84B9523AD53B800A7FEA1 /* Frameworks */,
+				D7B84B9623AD53B800A7FEA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChordRecognizeGenerate;
+			productName = ChordRecognizeGenerate;
+			productReference = D7B84B9823AD53B800A7FEA1 /* ChordRecognizeGenerate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D7B84BA023AD53B800A7FEA1 /* ChordRecognizeGenerateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7B84BAF23AD53B800A7FEA1 /* Build configuration list for PBXNativeTarget "ChordRecognizeGenerateTests" */;
+			buildPhases = (
+				D7B84B9D23AD53B800A7FEA1 /* Sources */,
+				D7B84B9E23AD53B800A7FEA1 /* Frameworks */,
+				D7B84B9F23AD53B800A7FEA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7B84BA423AD53B800A7FEA1 /* PBXTargetDependency */,
+			);
+			name = ChordRecognizeGenerateTests;
+			productName = ChordRecognizeGenerateTests;
+			productReference = D7B84BA123AD53B800A7FEA1 /* ChordRecognizeGenerateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7B84B8F23AD53B800A7FEA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Derrick Ward";
+				TargetAttributes = {
+					D7B84B9723AD53B800A7FEA1 = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					D7B84BA023AD53B800A7FEA1 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D7B84B9223AD53B800A7FEA1 /* Build configuration list for PBXProject "ChordRecognizeGenerate" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7B84B8E23AD53B800A7FEA1;
+			productRefGroup = D7B84B9923AD53B800A7FEA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7B84B9723AD53B800A7FEA1 /* ChordRecognizeGenerate */,
+				D7B84BA023AD53B800A7FEA1 /* ChordRecognizeGenerateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7B84B9623AD53B800A7FEA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B84B9F23AD53B800A7FEA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7B84B9423AD53B800A7FEA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B84BF523AE937300A7FEA1 /* ChordDefs.swift in Sources */,
+				D7B84BB723AD55F600A7FEA1 /* Chord.swift in Sources */,
+				D79DD06D23BEF41C00A18FEF /* Triad.swift in Sources */,
+				D7A212E3240CBB8E0015BD4F /* Tone.swift in Sources */,
+				D79DD06923BAA95100A18FEF /* MIDIConstants.swift in Sources */,
+				D79DD07123CA826C00A18FEF /* ChordGroup.swift in Sources */,
+				D7B84BB523AD547000A7FEA1 /* ChordGenerator.swift in Sources */,
+				D7A212E5240EF2A90015BD4F /* Designator.swift in Sources */,
+				D7B84BB323AD53E100A7FEA1 /* ChordRecognizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7B84B9D23AD53B800A7FEA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7B84BA723AD53B800A7FEA1 /* ChordRecognizeGenerateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7B84BA423AD53B800A7FEA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7B84B9723AD53B800A7FEA1 /* ChordRecognizeGenerate */;
+			targetProxy = D7B84BA323AD53B800A7FEA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D7B84BAA23AD53B800A7FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D7B84BAB23AD53B800A7FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D7B84BAD23AD53B800A7FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7CA4RWVEJL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ChordRecognizeGenerate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blindintuition.ChordRecognizeGenerate;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7B84BAE23AD53B800A7FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7CA4RWVEJL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ChordRecognizeGenerate/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blindintuition.ChordRecognizeGenerate;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7B84BB023AD53B800A7FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CA4RWVEJL;
+				INFOPLIST_FILE = ChordRecognizeGenerateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blindintuition.ChordRecognizeGenerateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7B84BB123AD53B800A7FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CA4RWVEJL;
+				INFOPLIST_FILE = ChordRecognizeGenerateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blindintuition.ChordRecognizeGenerateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7B84B9223AD53B800A7FEA1 /* Build configuration list for PBXProject "ChordRecognizeGenerate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B84BAA23AD53B800A7FEA1 /* Debug */,
+				D7B84BAB23AD53B800A7FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7B84BAC23AD53B800A7FEA1 /* Build configuration list for PBXNativeTarget "ChordRecognizeGenerate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B84BAD23AD53B800A7FEA1 /* Debug */,
+				D7B84BAE23AD53B800A7FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7B84BAF23AD53B800A7FEA1 /* Build configuration list for PBXNativeTarget "ChordRecognizeGenerateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7B84BB023AD53B800A7FEA1 /* Debug */,
+				D7B84BB123AD53B800A7FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7B84B8F23AD53B800A7FEA1 /* Project object */;
+}
