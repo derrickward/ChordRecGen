@@ -9,9 +9,11 @@ Mobile app (Swift, IOS/Mac) library for musical chord recognition and generation
 2. Add ChordRecognizeGenerate XCode library project to your workspace.
 3. (optional) If you want to run sample app, from command line, run pod install to generate XCode workspace for app. Sample app uses AudioKit and AudioKitUI cocoapod libraries. 
 
-### Sample App
+### How Chord Recognition Works
 
-The sample app UI contains a tab for chord recognition and a tab for chord generation. The chord recognition UI has an onscreen piano keyboard for entering notes. The recognize button characterizes the chord using the library, and the name is displayed on screen. The chord generation UI contains controls for setting the chord's key, octave, factor, qualities, inversions, added notes, etc... On clicking generate, the notes for the chord are generated and the chord is played back.
+1. On receiving an array of notes, the chord recognizer attempts to match a triad from a lookup table. Multiple roots are tried. The best match is chosen based on a score computed by a utility.
+2. If a triad is found, the "stack of thirds" are traversed in the note array to determine the chord's factor. Other notes are classified as "altered", "added", or "inverted", etc.. along the way accordingly.
+3. If there are notes left over that do not match, a recursive check for additional chords is made (polychords).
 
 ### Usage
 
@@ -64,7 +66,7 @@ octave - octave 0 - 8
 
 inversion - indicates 1st, 2nd, 3rd, or no inversion
 ```
-			
+            
 *Methods*
 ```
 
@@ -120,6 +122,14 @@ isPolychord - returns true if group of chords is a polychord
 #### ***• Tone***
 Object that encapsulates a degree and an array of signs. Used to represent chord factors, alterations, and added notes.
 
+### Sample App
+
+The sample app UI contains a tab for chord recognition and a tab for chord generation. The chord recognition UI has an onscreen piano keyboard for entering notes. The recognize button characterizes the chord using the library, and the name is displayed on screen. The chord generation UI contains controls for setting the chord's key, octave, factor, qualities, inversions, added notes, etc... On clicking generate, the notes for the chord are generated and the chord is played back.
+
+### Apps That Use Library
+
+Mixxmaster
+[https://apps.apple.com/us/app/mixxmaster/id1381233927](https://apps.apple.com/us/app/mixxmaster/id1381233927)
 
 ## Authors
 
@@ -132,5 +142,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * I am not an expert in music theory and learned chord theory on the fly while building this project. I am seeking contributors and testers with more depth of knowledge than I have to improve this project!
-
-
