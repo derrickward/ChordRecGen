@@ -16,7 +16,7 @@ import Foundation
     @objc public func chordToMIDINotes(chord: Chord) -> [ChordNote]
     {
         var chordNotes = [NoteRootOffset]()
-        chord.notes.append(chord.rootNote!)
+        
         switch chord.quality
         {
             case Quality.Maj:
@@ -60,8 +60,10 @@ import Foundation
             chord.notes.removeAll(where: { $0 == note })
         }
         
+        let adjustedRoot = chord.inversion != .none ? chord.rootNote! + 12 : chord.rootNote!
+        
         chord.notes.forEach({
-            if $0 < chord.rootNote!
+            if $0 < adjustedRoot
             {
                 chord.invertedNotes.append($0)
             }
@@ -99,8 +101,7 @@ import Foundation
             let numberDegreeInScale = degreeInScale.toNumber()
             if numberDegreeInScale >= 7 && numberDegreeInScale % 2 == 1
             {
-                let inversionOffset = chord.inversion == Inversion.third ? -12 : 0
-                offsets.append(ChordDefs.majScaleToOffset[7] + seventhOffsetVal + Int8(inversionOffset))
+                offsets.append(ChordDefs.majScaleToOffset[7] + seventhOffsetVal)
                 
                 for note in stride(from: 9, through: numberDegreeInScale, by: 2)
                 {

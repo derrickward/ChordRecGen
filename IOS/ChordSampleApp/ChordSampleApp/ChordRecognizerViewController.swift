@@ -130,6 +130,11 @@ class ChordRecognizerViewController : UIViewController, AKKeyboardDelegate
     
     @IBAction func onPlay(_ sender: Any) {
         
+        if notes.isNotEmpty
+        {
+            chords = recognizer.notesToChord(midiNoteValues: notes)
+        }
+        
         if let chordGroup = chords?.first
         {
             for chord in chordGroup.chords

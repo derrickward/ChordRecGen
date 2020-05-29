@@ -43,7 +43,7 @@ import Foundation
         {
             if match.getScore() > 0
             {
-                //print(match.getScore())
+                //print("chord: \(match.getName()) score: \(match.getScore())")
                 bestMatches.append(match)
             }
         }
@@ -62,7 +62,7 @@ import Foundation
                 }
             }
             
-         //   print("match ",chord.getRootName(),triad.getScore())
+            //print("match ",chord.getRootName(),triad.getScore())
             
             findFactors(chord: chord, triad: triad)
             chords.chords.append(chord)
@@ -83,14 +83,14 @@ import Foundation
             triad.nonTriadNotes.removeAll(where: { chord.invertedNotes.contains($0) })
             
             findAddedNotes(chord: chord, notes: triad.nonTriadNotes)
-            
+            //print("inversion: \(chord.inversion.rawValue)")
             chordGroups.append(chords)
         }
         
         var bestGroups = [ChordGroup]()
         for group in chordGroups
         {
-           // print(MIDIConstants.stringForNote(note: notes[match.rootIdx]) + " value: ",match.getValue())
+            //print(group.getFullName() + " value: ",group.getScore())
             let firstMatch = bestGroups.first
             if bestGroups.count == 0 || group.getScore() == firstMatch!.getScore()
             {
@@ -98,7 +98,7 @@ import Foundation
             }
             else if group.getScore() > firstMatch!.getScore()
             {
-             //   print("new best ",match.getValue(),firstMatch!.getValue())
+                //print("new best ",group.getFullName(),group.getScore())
                 bestGroups.removeAll()
                 bestGroups.append(group)
             }
@@ -241,7 +241,7 @@ import Foundation
     
     private func findTriad(notes: [ChordNote])
     {
-        for i in 0..<notes.count-1
+        for i in 0..<notes.count
         {
             let triadNotes = Triad.extractTriadNotes(rootIdx: i, notes: notes)
             for triad in ChordDefs.triads

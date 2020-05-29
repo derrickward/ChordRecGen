@@ -16,6 +16,7 @@ import Foundation
     }
     
     public static var supportsSecureCoding = true
+    public var root : NoteRootOffset = 0
     public var third : NoteRootOffset
     public var fifth : NoteRootOffset
     public var quality : Quality
@@ -56,7 +57,7 @@ import Foundation
     
     func addNotes(chordNotes : inout [NoteRootOffset], inversion : Inversion)
     {
-        var notes = [third,fifth]
+        var notes = [root,third,fifth]
         Triad.invert(notes: &notes, inversion: inversion)
         chordNotes.append(contentsOf: notes)
     }
@@ -100,6 +101,7 @@ import Foundation
         result.triadType = self.quality
         result.triad = self
         result.rootIdx = triadNotes[0]!
+        result.notes = notes
         
         let rootNote = notes[triadNotes[0]!]
         
@@ -176,11 +178,16 @@ import Foundation
     {
             switch inversion {
             case .first:
-                notes[0] -= 12
+                notes[0] += 12
             case .second:
-                notes[1] -= 12
+                notes[0] += 12
+                notes[1] += 12
+            case .third:
+                notes[0] += 12
+                notes[1] += 12
+                notes[2] += 12
             default:
-                print("default")
+                notes[0] += 0
             }
     }
 }
@@ -189,6 +196,7 @@ public class TriadMatch
 {
     var nonTriadNotes = [ChordNote]()
     var invertedNotes = [ChordNote]()
+    var notes : [ChordNote]!
     var omission : Degree?
     var triadNotes = [ChordNote]()
     weak var triad : Triad!
@@ -199,6 +207,14 @@ public class TriadMatch
     var inversion = Inversion.none
     public var isHalfDiminished = false
     
+    func getName() -> String
+    {
+        let rootNote = notes[rootIdx]
+        let rootName = MIDIConstants.stringForNote(note: rootNote)
+        let alteration = alteredFifth == nil ? "" : "\(Degree.five.toString())\(alteredFifthSign.toString())"
+        return "\(rootName)\(triadType.toString()) \(alteration)"
+    }
+    
     func getScore() -> Int
     {
         if triadNotes.count == 0
@@ -208,8 +224,9 @@ public class TriadMatch
         else
         {
             let score = triadNotes.count - rootIdx
-                - (alteredFifth == nil ? 0 : 1)
-        
+                + (omission == nil ? 4 : 0)
+                + (alteredFifth == nil ? 4 : 0)
+            
             return score
         }
         

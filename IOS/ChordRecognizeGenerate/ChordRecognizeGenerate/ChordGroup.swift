@@ -74,6 +74,6 @@ import Foundation
     {
         var score = 0
         chords.forEach({ score += $0.getScore() })
-        return score
+        return score / chords.count
     }
 }

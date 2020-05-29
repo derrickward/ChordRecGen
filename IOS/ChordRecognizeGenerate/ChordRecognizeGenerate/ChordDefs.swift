@@ -135,7 +135,14 @@ class ChordDefs
     
     static func offsetInExtendedChord(rootNote: ChordNote, note: ChordNote) -> NoteRootOffset
     {
-        return (note < rootNote || note - rootNote > ChordDefs.majScaleToOffset[13]) ? ((12 + NoteRootOffset(note) - NoteRootOffset(rootNote)) % 12) : NoteRootOffset(note) - NoteRootOffset(rootNote)
+        if note < rootNote || note - rootNote > ChordDefs.majScaleToOffset[13]
+        {
+            return ((12 + NoteRootOffset(note) % 12) - (NoteRootOffset(rootNote) % 12)) % 12
+        }
+        else
+        {
+            return NoteRootOffset(note) - NoteRootOffset(rootNote)
+        }
     }
     
     static func offsetInChord(rootNote: ChordNote, note: ChordNote) -> NoteRootOffset

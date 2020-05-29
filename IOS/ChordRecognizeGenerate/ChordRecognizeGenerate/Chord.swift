@@ -96,6 +96,7 @@ public typealias NoteRootOffset = Int8
         rootNote = notes[triadResult.rootIdx]
         quality = triadResult.triadType
         invertedNotes = triadResult.invertedNotes
+        inversion = triadResult.inversion
         ommission = triadResult.omission
         triad = triadResult.triad
         triadScore = triadResult.getScore()
