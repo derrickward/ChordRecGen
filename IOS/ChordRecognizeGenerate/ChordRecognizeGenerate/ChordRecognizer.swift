@@ -28,6 +28,7 @@ import Foundation
         {
             let chordGroup = ChordGroup()
             let chord = Chord(notes: notes)
+            chord.rootNote = notes[0]
             chordGroup.add(newChord: chord)
             chordGroups.append(chordGroup)
             return chordGroups
