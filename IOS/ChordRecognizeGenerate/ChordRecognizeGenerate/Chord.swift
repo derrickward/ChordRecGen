@@ -311,21 +311,30 @@ public typealias NoteRootOffset = Int8
     {
         let builder = NSMutableString()
         
-        coalesceDesignators(tones: alteredNotes, builder: builder)
+        let extendedAlteredNotes = alteredNotes.filter({ $0.degree.rawValue > 7 })
 
-        if !factors.isEmpty
+        if extendedAlteredNotes.isEmpty
         {
-            if factorQuality != Quality.dom && factorQuality != Quality.dim
+            coalesceDesignators(tones: alteredNotes, builder: builder)
+            if !factors.isEmpty
+            {
+                if factorQuality != Quality.dom && factorQuality != Quality.dim
+                {
+                    builder.append(" ")
+                    builder.append(Chord.designatorToString(designator: factorQuality, form: formType))
+                }
+            }
+            
+            coalesceDesignators(tones: factors, builder: builder)
+            if factors.isEmpty
             {
                 builder.append(" ")
-                builder.append(Chord.designatorToString(designator: factorQuality, form: formType))
             }
         }
-        
-        coalesceDesignators(tones: factors, builder: builder)
-        if factors.isEmpty
+        else if !factors.isEmpty
         {
-            builder.append(" ")
+            coalesceDesignators(tones: alteredNotes, builder: builder)
+            builder.insert(Degree.seven.toString(), at: 0)
         }
         coalesceDesignators(tones: additions, delimiter: Delimiter.add, builder: builder)
         

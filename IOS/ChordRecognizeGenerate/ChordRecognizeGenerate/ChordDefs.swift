@@ -10,7 +10,7 @@ import Foundation
 
 class ChordDefs
 {
-    public typealias DegreeInScale = (degree: Degree, designator: Sign)
+    public typealias DegreeInScale = (degree: Degree, sign: Sign)
     
     static let majScaleToOffset : [NoteRootOffset] = [0,0,2,4,5,7,9,11,12,14,16,17,19,21]
     static let minScaleToOffset : [NoteRootOffset] = [0,0,2,3,5,7,8,10,12,14,16,17,19,21]

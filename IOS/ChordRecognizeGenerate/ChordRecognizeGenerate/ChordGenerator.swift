@@ -49,8 +49,8 @@ import Foundation
                 chord.triad = ChordDefs.majTriad
         }
         
-        parseExtensions(chord: chord)
-        parseAlterations(chord: chord)
+        parseFactors(chord: chord)
+               parseAlterations(chord: chord)
         parseAdditions(chord: chord)
         
         if chord.ommission != nil
@@ -77,7 +77,7 @@ import Foundation
         chord.additions.forEach({ chord.notes.append($0.toNote(root: chord.rootNote!)) })
     }
     
-    private func parseExtensions(chord : Chord)
+    private func parseFactors(chord : Chord)
     {
         let tones = chord.factors
         let seventhOffsetVal = seventhOffset(chordQuality: chord.quality, factorQuality: chord.factorQuality)
@@ -122,7 +122,7 @@ import Foundation
             for j in 0..<chord.notes.count
             {
                 var note = chord.notes[j]
-                let offset = ChordDefs.offsetInChord(rootNote: chord.rootNote!,note: note)
+                let offset = ChordDefs.offsetInExtendedChord(rootNote: chord.rootNote!,note: note)
                 let degree = ChordDefs.offsetToMajDegree[Int(offset)].degree
                 if degree == alteredTone.degree
                 {

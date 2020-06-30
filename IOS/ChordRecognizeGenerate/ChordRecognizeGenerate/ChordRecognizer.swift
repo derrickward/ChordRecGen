@@ -132,14 +132,14 @@ import Foundation
             {
                 if noteInScaleInfo.degree == Degree.seven
                 {
-                    seventhChordType = ChordDefs.seventhNoteToDesignator(quality: chord.quality ,sign: noteInScaleInfo.designator)
+                    seventhChordType = ChordDefs.seventhNoteToDesignator(quality: chord.quality ,sign: noteInScaleInfo.sign)
                     seventhChordDesignator = Tone(degree: degreeInScale)
                     chord.inversion = note < chord.rootNote!
                         && chord.inversion == Inversion.none ? Inversion.third : chord.inversion
                 }
-                else if noteInScaleInfo.designator != Sign.natural
+                else if noteInScaleInfo.sign != Sign.natural
                 {
-                    alteredDesignators.append(Tone(signs: [noteInScaleInfo.designator],degree: degreeInScale))
+                    alteredDesignators.append(Tone(signs: [noteInScaleInfo.sign],degree: degreeInScale))
                 }
                 else
                 {
@@ -187,13 +187,13 @@ import Foundation
                 continue
             }
             
-            if degree.designator == Sign.natural
+            if degree.sign == Sign.natural
             {
                 chord.addAdditions(designators: [Tone(degree: degree.degree)])
             }
             else
             {
-                chord.addAdditions(designators: [Tone(signs: [degree.designator], degree: degree.degree)])
+                chord.addAdditions(designators: [Tone(signs: [degree.sign], degree: degree.degree)])
             }
         }
         
