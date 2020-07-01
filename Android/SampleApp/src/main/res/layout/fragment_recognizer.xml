@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.recognizer.RecognizerFragment">
+
+    <com.blindintuition.pianoview.Piano
+        android:id="@+id/pianoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:keyCount="24"
+        app:blackKeyDrawable="@drawable/key_black"
+        app:whiteKeyDrawable="@drawable/key_white"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/recognizeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:text="Recognize"
+        app:layout_constraintTop_toBottomOf="@id/pianoView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Play"
+        app:layout_constraintBottom_toBottomOf="@id/recognizeButton"
+        app:layout_constraintEnd_toStartOf="@id/recognizeButton" />
+
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="@id/recognizeButton"
+        app:layout_constraintEnd_toStartOf="@id/playButton" />
+
+    <TextView
+        android:id="@+id/chordNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/recognizeButton"
+        />
+
+
+    <TextView
+        android:id="@+id/chordNotesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/chordNameTextView"
+        app:layout_constraintBottom_toBottomOf="@id/recognizeButton"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

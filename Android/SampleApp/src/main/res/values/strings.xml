@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChordRecGen</string>
+    <string name="title_home">Recognize</string>
+    <string name="title_dashboard">Generate</string>
+</resources>

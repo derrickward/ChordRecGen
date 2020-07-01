@@ -1,0 +1,4 @@
+include ':PianoView'
+include ':ChordRecGenLib'
+include ':SampleApp'
+rootProject.name = "ChordRecGen"
